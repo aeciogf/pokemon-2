@@ -26,7 +26,7 @@ public class VitrineApp extends Application {
 	private TableColumn<Pokemon, String> columnPokemon;
 	private TableColumn<Pokemon, Double> columnForca;
 	private static ObservableList<Pokemon> listItens = FXCollections.observableArrayList();
-	private static Carrinho carrinho;
+	public static Carrinho carrinho;
 	public static Stage stage;
 	
 	public void initComponents(){
@@ -130,6 +130,10 @@ public class VitrineApp extends Application {
 	
 	public static Stage getStage(){
 		return stage;
+	}
+	
+	public static Carrinho getCarrinho(){
+		return carrinho;
 	}
 	
 	@Override
