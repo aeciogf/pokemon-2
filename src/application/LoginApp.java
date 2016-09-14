@@ -27,16 +27,17 @@ public class LoginApp extends Application {
 	public void initComponents(){
 		pane = new AnchorPane();
 		pane.setPrefSize(400, 300);
+		pane.setStyle("-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, silver 0%, blue 100%)");
 		
-		TextField txLogin = new TextField();
+		txLogin = new TextField();
 		txLogin.setPromptText("Seu login");
 		
 		
-		PasswordField txSenha = new PasswordField();
+		txSenha = new PasswordField();
 		txSenha.setPromptText("Sua senha");
 		
-		Button btEntrar = new Button("Entrar");
-		Button btSair = new Button("Sair");
+		btEntrar = new Button("Entrar");
+		btSair = new Button("Sair");
 		
 		pane.getChildren().addAll(txLogin, txSenha, btEntrar, btSair);
 		
@@ -65,7 +66,7 @@ public class LoginApp extends Application {
 				e.printStackTrace();
 			}
 		} else {
-			JOptionPane.showMessageDialog(null, "Credenciais inv·lidas", "Erro", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Credenciais inv√°lidas", "Erro", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
@@ -107,8 +108,7 @@ public class LoginApp extends Application {
 			initListeners();
 
 			Scene scene = new Scene(pane);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			
+					
 			stage.setScene(scene);
 			stage.setResizable(false);
 			stage.setTitle("Login - Loja Pokemon");

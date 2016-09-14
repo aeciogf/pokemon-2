@@ -37,12 +37,12 @@ public class VitrineApp extends Application {
 		txPesquisa.setPromptText("Item para pesquisa");
 		
 		tbVitrine = new TableView<Pokemon>();
-		tbVitrine.setPrefSize(780, 550);
+		tbVitrine.setPrefSize(500, 500);
 		
 		columnPokemon = new TableColumn<Pokemon, String>("Pokemon");
 		columnPokemon.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nome"));
 		
-		columnForca = new TableColumn<Pokemon, Double>("Força");
+		columnForca = new TableColumn<Pokemon, Double>("ForÃ§a");
 		columnForca.setCellValueFactory(new PropertyValueFactory<Pokemon, Double>("forca"));
 		
 		tbVitrine.getColumns().addAll(columnPokemon, columnForca);
