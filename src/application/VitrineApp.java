@@ -13,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -93,6 +94,25 @@ public class VitrineApp extends Application {
 				}
 				
 			}
+		});
+		
+		tbVitrine.setOnMousePressed(new EventHandler<MouseEvent>() {
+//teste
+			@Override
+			public void handle(MouseEvent event) {
+				if (event.isPrimaryButtonDown() && event.getClickCount() == 2){
+					int indexSelectPokemon = tbVitrine.getSelectionModel().getSelectedIndex();
+					ItemVitrineApp.setPokemon(listItens.get(indexSelectPokemon));
+					ItemVitrineApp.setIndex(indexSelectPokemon);
+					try {
+						new ItemVitrineApp().start(new Stage());
+					} catch (Exception e){
+						e.printStackTrace();
+					}
+				}
+				
+			}
+			
 		});
 	}
 
