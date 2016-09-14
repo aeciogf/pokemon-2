@@ -1,0 +1,4 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.pane {
+	-fx-background-color: linear-gradient("from 0% 0% to 100% 100%, blue 0%, silver 100%");
+}
