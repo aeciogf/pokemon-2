@@ -52,9 +52,11 @@ public class LoginApp extends Application {
 		
 		btEntrar.setLayoutX((pane.getWidth() - btEntrar.getWidth())/2);
 		btEntrar.setLayoutY(150);
+		btEntrar.getStyleClass().add("btEntrar");
 		
 		btSair.setLayoutX((pane.getWidth() - btSair.getWidth())/2);
 		btSair.setLayoutY(200);
+		btSair.getStyleClass().add("btSair");
 	}
 
 	public void logar(){
@@ -108,7 +110,8 @@ public class LoginApp extends Application {
 			initListeners();
 
 			Scene scene = new Scene(pane);
-					
+			//scene.getStylesheets().add("C:/Users/asus/git/pokemon-2/src/application/application.css");
+			
 			stage.setScene(scene);
 			stage.setResizable(false);
 			stage.setTitle("Login - Loja Pokemon");

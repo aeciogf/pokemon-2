@@ -1,6 +1,8 @@
 package application;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -32,11 +34,30 @@ public class ItemVitrineApp extends Application {
 	}
 	
 	public void initLayout(){
+		lbNome.setLayoutX((pane.getWidth() - lbNome.getWidth()) - 50);
+		lbNome.setLayoutY(25);
 		
+		lbForca.setLayoutX((pane.getWidth() - lbForca.getWidth())- 50);
+		lbForca.setLayoutY(45);
+		
+		btAddCarrinho.setLayoutX((pane.getWidth() - btAddCarrinho.getWidth()) - 50);
+		btAddCarrinho.setLayoutY(65);
 	}
 	
 	public void initListeners(){
-		
+		btAddCarrinho.setOnAction(new EventHandler<ActionEvent>() {
+			
+			@Override
+			public void handle(ActionEvent event) {
+				VitrineApp.getCarrinho().addPokemon(pokemon);
+				try {
+					new CarrinhoApp().start(new Stage());
+				}catch (Exception e){
+					e.printStackTrace();
+				}
+				
+			}
+		});
 	}
 	
 	public static Stage getStage(){

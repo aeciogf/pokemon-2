@@ -38,12 +38,12 @@ public class VitrineApp extends Application {
 		txPesquisa.setPromptText("Item para pesquisa");
 		
 		tbVitrine = new TableView<Pokemon>();
-		tbVitrine.setPrefSize(500, 500);
+		tbVitrine.setPrefSize(600, 600);
 		
 		columnPokemon = new TableColumn<Pokemon, String>("Pokemon");
 		columnPokemon.setCellValueFactory(new PropertyValueFactory<Pokemon, String>("nome"));
 		
-		columnForca = new TableColumn<Pokemon, Double>("ForÃ§a");
+		columnForca = new TableColumn<Pokemon, Double>("Força");
 		columnForca.setCellValueFactory(new PropertyValueFactory<Pokemon, Double>("forca"));
 		
 		tbVitrine.getColumns().addAll(columnPokemon, columnForca);
@@ -57,7 +57,7 @@ public class VitrineApp extends Application {
 	
 	public void initItens(){
 		Vitrine vitrine = new Vitrine();
-		vitrine.addProdutos(new Pokemon("Pikachu", 12.00), 
+		vitrine.addPokemon( new Pokemon("Pikachu", 12.00), 
 							new Pokemon("Zubat", 9.00), 
 							new Pokemon("Ratata", 11.00), 
 							new Pokemon("Pidgey", 10.00), 
@@ -123,8 +123,8 @@ public class VitrineApp extends Application {
 		tbVitrine.setLayoutX(40);
 		tbVitrine.setLayoutX(10);
 		
-		columnPokemon.prefWidthProperty().bind(tbVitrine.widthProperty().multiply(0.6));;
-		columnForca.prefWidthProperty().bind(tbVitrine.widthProperty().multiply(0.4));;
+		columnPokemon.prefWidthProperty().bind(tbVitrine.widthProperty().multiply(0.2));;
+		columnForca.prefWidthProperty().bind(tbVitrine.widthProperty().multiply(0.2));;
 		
 	}
 	
@@ -143,7 +143,7 @@ public class VitrineApp extends Application {
 		Scene scene = new Scene(pane);
 		stage.setScene(scene);
 		stage.setResizable(false);
-		stage.setTitle("Detalhe Pokemon");
+		stage.setTitle("Lista de Pokemons");
 		stage.show();
 		ItemVitrineApp.stage = stage;
 		initLayout();
