@@ -68,7 +68,7 @@ public class LoginApp extends Application {
 				e.printStackTrace();
 			}
 		} else {
-			JOptionPane.showMessageDialog(null, "Credenciais inv√°lidas", "Erro", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Credenciais inv·lidas", "Erro", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 
